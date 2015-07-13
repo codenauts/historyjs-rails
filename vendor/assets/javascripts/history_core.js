@@ -16,7 +16,6 @@
 		console = window.console||undefined, // Prevent a JSLint complain
 		document = window.document, // Make sure we are using the correct document
 		navigator = window.navigator, // Make sure we are using the correct navigator
-		sessionStorage = (try{window.sessionStorage||false}catch{false}), // sessionStorage
 		setTimeout = window.setTimeout,
 		clearTimeout = window.clearTimeout,
 		setInterval = window.setInterval,
@@ -25,6 +24,14 @@
 		alert = window.alert,
 		History = window.History = window.History||{}, // Public History Object
 		history = window.history; // Old History Object
+
+	var sessionStorage = false;
+	try {
+		sessionStorage = window.sessionStorage||false;
+	}
+	catch ( err ) {
+		// Ignore any exception
+	}
 
 	// MooTools Compatibility
 	JSON.stringify = JSON.stringify||JSON.encode;
