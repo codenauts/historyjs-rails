@@ -16,7 +16,7 @@
 		console = window.console||undefined, // Prevent a JSLint complain
 		document = window.document, // Make sure we are using the correct document
 		navigator = window.navigator, // Make sure we are using the correct navigator
-		sessionStorage = window.sessionStorage||false, // sessionStorage
+		sessionStorage = (try{window.sessionStorage||false}catch{false}), // sessionStorage
 		setTimeout = window.setTimeout,
 		clearTimeout = window.clearTimeout,
 		setInterval = window.setInterval,
